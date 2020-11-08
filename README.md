@@ -9,8 +9,9 @@ x=a를 넣고 f(a)>0이고 f'(a)>0이면 f(x)의 근은 a보다 작을 것이다
  
     function [x, ea, it] = NewtonRaphson(f, df, x0, es, maxit)
 입력값
-f : 함수
-df : f의 미분
+
+f : 함수  
+df : f의 미분 
 x0 : 초기 추정값
 es : approximate error
 maxit: iterations의 최대값
