@@ -27,11 +27,13 @@ ea : approximate error 값
     if nargin<4, es = 0.01; end
     if nargin<5, maxit = 100; end
 
+루프 초기화
 
-err0 = Inf; % initialization for the loop
-i = 0;
-fprintf('i  ,   x_{i},        ea\n');
-fprintf('%d  ,   %.6f\n', i, x0);
+    err0 = Inf;     
+    i = 0;   
+    fprintf('i  ,   x_{i},        ea\n');   
+    fprintf('%d  ,   %.6f\n', i, x0);   
+
 
 while err0>es && i<maxit
   if df(x0) 
