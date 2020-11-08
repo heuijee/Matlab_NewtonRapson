@@ -12,13 +12,14 @@ x=a를 넣고 f(a)>0이고 f'(a)>0이면 f(x)의 근은 a보다 작을 것이다
 
 f : 함수  
 df : f의 미분 
-x0 : 초기 추정값
-es : approximate error
-maxit: iterations의 최대값
-결과값
-x : f의 근의 추정값
-it : iterations의 수 
-ea : approximate error 값
+x0 : 초기 추정값 
+es : approximate error 
+maxit: iterations의 최대값 
+
+결과값 
+x : f의 근의 추정값 
+it : iterations의 수  
+ea : approximate error 값 
 
 if nargin<4, es = 0.01; end
 if nargin<5, maxit = 100; end
