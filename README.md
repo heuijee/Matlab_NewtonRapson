@@ -4,7 +4,7 @@ newton rapson법: 방정식 f(x)=0의 해를 근사적으로 찾을때 유용한
 
 x=a를 넣고 f(a)>0이고 f'(a)>0이면 f(x)의 근은 a보다 작을 것이다라고 추정할 수 있다. 따라서 x=a일때의 접선을 그릴때 접선의 x절편에서 다시 추정하고 반복한다.
 
-### 2. matlab코드 짜기
+## 2. matlab코드 짜기
  함수 선언하기
  
     function [x, ea, it] = NewtonRaphson(f, df, x0, es, maxit)
@@ -22,8 +22,12 @@ x : f의 근의 추정값
 it : iterations의 수   
 ea : approximate error 값  
 
-if nargin<4, es = 0.01; end
-if nargin<5, maxit = 100; end
+변수의 초기값 설정(default)
+
+    if nargin<4, es = 0.01; end
+    if nargin<5, maxit = 100; end
+
+
 err0 = Inf; % initialization for the loop
 i = 0;
 fprintf('i  ,   x_{i},        ea\n');
