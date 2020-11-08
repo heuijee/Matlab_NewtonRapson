@@ -34,24 +34,31 @@ ea : approximate error 값
     fprintf('i  ,   x_{i},        ea\n');   
     fprintf('%d  ,   %.6f\n', i, x0);   
 
+i가 iterantion의 최대값보다 작을때 루프를 돌려준다
 
-while err0>es && i<maxit
-  if df(x0) 
-    x1 = x0-f(x0)/df(x0);
-  else 
-     error('Diverged! Division by zero!');
-  end
+    while err0>es && i<maxit   
+
+미분값이 0이 아닐시 x절편을 찾아준다
+
+      if df(x0)    
+        x1 = x0-f(x0)/df(x0);   
+      else    
+        error('Diverged! Division by zero!');    
+      end  
    
-  err1 = 100*abs((x1-x0)/x1);
-  i = i+1;
-  fprintf('%d   ,  %.6f,     %.2f%%\n', i, x1, err1);
-  err0 = err1;
-  x0 = x1;
-end
+approximate error를 구해준뒤 갱신해준다     
 
-x = x0;
-it = i;
-ea = err0;
+      err1 = 100*abs((x1-x0)/x1);         
+      i = i+1;         
+      fprintf('%d   ,  %.6f,     %.2f%%\n', i, x1, err1);       
+      err0 = err1;        
+      x0 = x1;        
+    end
 
+i가 iteration의 최대값까지 돌았으면 루프 끝
 
-end
+    x = x0;
+    it = i;
+    ea = err0;
+
+    end
